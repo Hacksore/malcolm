@@ -8,6 +8,12 @@
   "bin": {
     "malcolm": "./dist/cli.js"
   },
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    }
+  },
   "type": "module",
   "scripts": {
     "start:dev": "NODE_OPTIONS='--no-deprecation' npx tsx watch src/cli.ts",
@@ -19,15 +25,15 @@
   "license": "ISC",
   "dependencies": {
     "@braintree/sanitize-url": "^7.0.1",
+    "https-proxy-agent": "^7.0.4",
+    "node-html-parser": "^6.1.13",
     "chalk": "^5.3.0",
     "get-port": "^7.1.0",
+    "mockttp": "^3.10.2",
     "tsx": "^4.9.1"
   },
   "devDependencies": {
     "@types/node": "^20.12.5",
-    "https-proxy-agent": "^7.0.4",
-    "mockttp": "^3.10.2",
-    "node-html-parser": "^6.1.13",
     "typescript": "^5.4.4",
     "vitest": "^1.4.0"
   }
